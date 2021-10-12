@@ -1,0 +1,24 @@
+{
+  "name": "lgmscript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-g4": "java -Xmx500M -cp /usr/local/lib/antlr-4.9-complete.jar:$CLASSPATH org.antlr.v4.Tool -Dlanguage=JavaScript -visitor ./production/lgmscript/LgmScript.g4 -o ./output",
+    "start": "NODE_OPTIONS='--experimental-specifier-resolution=node' node --trace-warnings src/index.js",
+    "serve": "http-server ./dist/ -c-1",
+    "build": "npx webpack --config webpack.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "antlr4": "^4.9.2"
+  },
+  "devDependencies": {
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0"
+  }
+}
