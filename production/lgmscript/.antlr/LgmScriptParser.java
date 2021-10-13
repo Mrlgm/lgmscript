@@ -17,9 +17,9 @@ public class LgmScriptParser extends Parser {
 		new PredictionContextCache();
 	public static final int
 		If=1, Int=2, IntLiteral=3, StringLiteral=4, AssignmentOP=5, RelationalOP=6, 
-		Star=7, Divide=8, Plus=9, Subtract=10, Sharp=11, SemiColon=12, Dot=13, 
-		Comm=14, LeftBracket=15, RightBracket=16, LeftBrace=17, RightBrace=18, 
-		LeftParen=19, RightParen=20, Id=21, Whitespace=22, Newline=23;
+		ADD=7, SUB=8, MUL=9, DIV=10, Sharp=11, SemiColon=12, Dot=13, Comm=14, 
+		LeftBracket=15, RightBracket=16, LeftBrace=17, RightBrace=18, LeftParen=19, 
+		RightParen=20, Id=21, Whitespace=22, Newline=23;
 	public static final int
 		RULE_program = 0, RULE_intDeclare = 1, RULE_additive = 2, RULE_multiplicative = 3, 
 		RULE_primary = 4, RULE_expressionStatement = 5, RULE_assignmentStatement = 6;
@@ -33,7 +33,7 @@ public class LgmScriptParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, null, "'int'", null, null, "'='", null, "'*'", "'/'", "'+'", "'-'", 
+			null, null, "'int'", null, null, "'='", null, "'+'", "'-'", "'*'", "'/'", 
 			"'#'", "';'", "'.'", "','", "'['", "']'", "'{'", "'}'", "'('", "')'"
 		};
 	}
@@ -41,9 +41,9 @@ public class LgmScriptParser extends Parser {
 	private static String[] makeSymbolicNames() {
 		return new String[] {
 			null, "If", "Int", "IntLiteral", "StringLiteral", "AssignmentOP", "RelationalOP", 
-			"Star", "Divide", "Plus", "Subtract", "Sharp", "SemiColon", "Dot", "Comm", 
-			"LeftBracket", "RightBracket", "LeftBrace", "RightBrace", "LeftParen", 
-			"RightParen", "Id", "Whitespace", "Newline"
+			"ADD", "SUB", "MUL", "DIV", "Sharp", "SemiColon", "Dot", "Comm", "LeftBracket", 
+			"RightBracket", "LeftBrace", "RightBrace", "LeftParen", "RightParen", 
+			"Id", "Whitespace", "Newline"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -205,19 +205,20 @@ public class LgmScriptParser extends Parser {
 	}
 
 	public static class AdditiveContext extends ParserRuleContext {
+		public Token bop;
 		public List<MultiplicativeContext> multiplicative() {
 			return getRuleContexts(MultiplicativeContext.class);
 		}
 		public MultiplicativeContext multiplicative(int i) {
 			return getRuleContext(MultiplicativeContext.class,i);
 		}
-		public List<TerminalNode> Plus() { return getTokens(LgmScriptParser.Plus); }
-		public TerminalNode Plus(int i) {
-			return getToken(LgmScriptParser.Plus, i);
+		public List<TerminalNode> ADD() { return getTokens(LgmScriptParser.ADD); }
+		public TerminalNode ADD(int i) {
+			return getToken(LgmScriptParser.ADD, i);
 		}
-		public List<TerminalNode> Subtract() { return getTokens(LgmScriptParser.Subtract); }
-		public TerminalNode Subtract(int i) {
-			return getToken(LgmScriptParser.Subtract, i);
+		public List<TerminalNode> SUB() { return getTokens(LgmScriptParser.SUB); }
+		public TerminalNode SUB(int i) {
+			return getToken(LgmScriptParser.SUB, i);
 		}
 		public AdditiveContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -237,13 +238,14 @@ public class LgmScriptParser extends Parser {
 			setState(31);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==Plus || _la==Subtract) {
+			while (_la==ADD || _la==SUB) {
 				{
 				{
 				setState(27);
+				((AdditiveContext)_localctx).bop = _input.LT(1);
 				_la = _input.LA(1);
-				if ( !(_la==Plus || _la==Subtract) ) {
-				_errHandler.recoverInline(this);
+				if ( !(_la==ADD || _la==SUB) ) {
+					((AdditiveContext)_localctx).bop = (Token)_errHandler.recoverInline(this);
 				}
 				else {
 					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
@@ -272,19 +274,20 @@ public class LgmScriptParser extends Parser {
 	}
 
 	public static class MultiplicativeContext extends ParserRuleContext {
+		public Token bop;
 		public List<PrimaryContext> primary() {
 			return getRuleContexts(PrimaryContext.class);
 		}
 		public PrimaryContext primary(int i) {
 			return getRuleContext(PrimaryContext.class,i);
 		}
-		public List<TerminalNode> Star() { return getTokens(LgmScriptParser.Star); }
-		public TerminalNode Star(int i) {
-			return getToken(LgmScriptParser.Star, i);
+		public List<TerminalNode> MUL() { return getTokens(LgmScriptParser.MUL); }
+		public TerminalNode MUL(int i) {
+			return getToken(LgmScriptParser.MUL, i);
 		}
-		public List<TerminalNode> Divide() { return getTokens(LgmScriptParser.Divide); }
-		public TerminalNode Divide(int i) {
-			return getToken(LgmScriptParser.Divide, i);
+		public List<TerminalNode> DIV() { return getTokens(LgmScriptParser.DIV); }
+		public TerminalNode DIV(int i) {
+			return getToken(LgmScriptParser.DIV, i);
 		}
 		public MultiplicativeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -304,13 +307,14 @@ public class LgmScriptParser extends Parser {
 			setState(39);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==Star || _la==Divide) {
+			while (_la==MUL || _la==DIV) {
 				{
 				{
 				setState(35);
+				((MultiplicativeContext)_localctx).bop = _input.LT(1);
 				_la = _input.LA(1);
-				if ( !(_la==Star || _la==Divide) ) {
-				_errHandler.recoverInline(this);
+				if ( !(_la==MUL || _la==DIV) ) {
+					((MultiplicativeContext)_localctx).bop = (Token)_errHandler.recoverInline(this);
 				}
 				else {
 					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
@@ -456,7 +460,7 @@ public class LgmScriptParser extends Parser {
 		"\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\3\2\3\2\3\2\5\2\24\n\2\3"+
 		"\3\3\3\3\3\3\3\3\3\3\3\3\3\3\4\3\4\3\4\7\4 \n\4\f\4\16\4#\13\4\3\5\3\5"+
 		"\3\5\7\5(\n\5\f\5\16\5+\13\5\3\6\3\6\3\7\3\7\3\7\3\b\3\b\3\b\3\b\3\b\3"+
-		"\b\2\2\t\2\4\6\b\n\f\16\2\5\3\2\13\f\3\2\t\n\4\2\5\5\27\27\2\63\2\23\3"+
+		"\b\2\2\t\2\4\6\b\n\f\16\2\5\3\2\t\n\3\2\13\f\4\2\5\5\27\27\2\63\2\23\3"+
 		"\2\2\2\4\25\3\2\2\2\6\34\3\2\2\2\b$\3\2\2\2\n,\3\2\2\2\f.\3\2\2\2\16\61"+
 		"\3\2\2\2\20\24\5\4\3\2\21\24\5\f\7\2\22\24\5\16\b\2\23\20\3\2\2\2\23\21"+
 		"\3\2\2\2\23\22\3\2\2\2\24\3\3\2\2\2\25\26\7\4\2\2\26\27\7\27\2\2\27\30"+

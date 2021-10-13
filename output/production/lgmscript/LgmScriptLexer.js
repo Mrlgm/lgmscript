@@ -66,9 +66,9 @@ const serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786",
     "\u0002PT\u0007>\u0002\u0002QR\u0007>\u0002\u0002RT\u0007?\u0002\u0002",
     "SK\u0003\u0002\u0002\u0002SM\u0003\u0002\u0002\u0002SN\u0003\u0002\u0002",
     "\u0002SP\u0003\u0002\u0002\u0002SQ\u0003\u0002\u0002\u0002T\u000e\u0003",
-    "\u0002\u0002\u0002UV\u0007,\u0002\u0002V\u0010\u0003\u0002\u0002\u0002",
-    "WX\u00071\u0002\u0002X\u0012\u0003\u0002\u0002\u0002YZ\u0007-\u0002",
-    "\u0002Z\u0014\u0003\u0002\u0002\u0002[\\\u0007/\u0002\u0002\\\u0016",
+    "\u0002\u0002\u0002UV\u0007-\u0002\u0002V\u0010\u0003\u0002\u0002\u0002",
+    "WX\u0007/\u0002\u0002X\u0012\u0003\u0002\u0002\u0002YZ\u0007,\u0002",
+    "\u0002Z\u0014\u0003\u0002\u0002\u0002[\\\u00071\u0002\u0002\\\u0016",
     "\u0003\u0002\u0002\u0002]^\u0007%\u0002\u0002^\u0018\u0003\u0002\u0002",
     "\u0002_`\u0007=\u0002\u0002`\u001a\u0003\u0002\u0002\u0002ab\u00070",
     "\u0002\u0002b\u001c\u0003\u0002\u0002\u0002cd\u0007.\u0002\u0002d\u001e",
@@ -100,20 +100,20 @@ export default class LgmScriptLexer extends antlr4.Lexer {
     static grammarFileName = "LgmScript.g4";
     static channelNames = [ "DEFAULT_TOKEN_CHANNEL", "HIDDEN" ];
 	static modeNames = [ "DEFAULT_MODE" ];
-	static literalNames = [ null, null, "'int'", null, null, "'='", null, "'*'", 
-                         "'/'", "'+'", "'-'", "'#'", "';'", "'.'", "','", 
+	static literalNames = [ null, null, "'int'", null, null, "'='", null, "'+'", 
+                         "'-'", "'*'", "'/'", "'#'", "';'", "'.'", "','", 
                          "'['", "']'", "'{'", "'}'", "'('", "')'" ];
 	static symbolicNames = [ null, "If", "Int", "IntLiteral", "StringLiteral", 
-                          "AssignmentOP", "RelationalOP", "Star", "Divide", 
-                          "Plus", "Subtract", "Sharp", "SemiColon", "Dot", 
-                          "Comm", "LeftBracket", "RightBracket", "LeftBrace", 
-                          "RightBrace", "LeftParen", "RightParen", "Id", 
-                          "Whitespace", "Newline" ];
+                          "AssignmentOP", "RelationalOP", "ADD", "SUB", 
+                          "MUL", "DIV", "Sharp", "SemiColon", "Dot", "Comm", 
+                          "LeftBracket", "RightBracket", "LeftBrace", "RightBrace", 
+                          "LeftParen", "RightParen", "Id", "Whitespace", 
+                          "Newline" ];
 	static ruleNames = [ "If", "Int", "IntLiteral", "StringLiteral", "AssignmentOP", 
-                      "RelationalOP", "Star", "Divide", "Plus", "Subtract", 
-                      "Sharp", "SemiColon", "Dot", "Comm", "LeftBracket", 
-                      "RightBracket", "LeftBrace", "RightBrace", "LeftParen", 
-                      "RightParen", "Id", "Whitespace", "Newline" ];
+                      "RelationalOP", "ADD", "SUB", "MUL", "DIV", "Sharp", 
+                      "SemiColon", "Dot", "Comm", "LeftBracket", "RightBracket", 
+                      "LeftBrace", "RightBrace", "LeftParen", "RightParen", 
+                      "Id", "Whitespace", "Newline" ];
 
     constructor(input) {
         super(input)
@@ -132,10 +132,10 @@ LgmScriptLexer.IntLiteral = 3;
 LgmScriptLexer.StringLiteral = 4;
 LgmScriptLexer.AssignmentOP = 5;
 LgmScriptLexer.RelationalOP = 6;
-LgmScriptLexer.Star = 7;
-LgmScriptLexer.Divide = 8;
-LgmScriptLexer.Plus = 9;
-LgmScriptLexer.Subtract = 10;
+LgmScriptLexer.ADD = 7;
+LgmScriptLexer.SUB = 8;
+LgmScriptLexer.MUL = 9;
+LgmScriptLexer.DIV = 10;
 LgmScriptLexer.Sharp = 11;
 LgmScriptLexer.SemiColon = 12;
 LgmScriptLexer.Dot = 13;

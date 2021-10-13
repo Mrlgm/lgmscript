@@ -15,7 +15,7 @@ const serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786",
     "\u0005\u0007\u0005(\n\u0005\f\u0005\u000e\u0005+\u000b\u0005\u0003\u0006",
     "\u0003\u0006\u0003\u0007\u0003\u0007\u0003\u0007\u0003\b\u0003\b\u0003",
     "\b\u0003\b\u0003\b\u0003\b\u0002\u0002\t\u0002\u0004\u0006\b\n\f\u000e",
-    "\u0002\u0005\u0003\u0002\u000b\f\u0003\u0002\t\n\u0004\u0002\u0005\u0005",
+    "\u0002\u0005\u0003\u0002\t\n\u0003\u0002\u000b\f\u0004\u0002\u0005\u0005",
     "\u0017\u0017\u00023\u0002\u0013\u0003\u0002\u0002\u0002\u0004\u0015",
     "\u0003\u0002\u0002\u0002\u0006\u001c\u0003\u0002\u0002\u0002\b$\u0003",
     "\u0002\u0002\u0002\n,\u0003\u0002\u0002\u0002\f.\u0003\u0002\u0002\u0002",
@@ -50,11 +50,11 @@ export default class LgmScriptParser extends antlr4.Parser {
 
     static grammarFileName = "LgmScript.g4";
     static literalNames = [ null, null, "'int'", null, null, "'='", null, 
-                            "'*'", "'/'", "'+'", "'-'", "'#'", "';'", "'.'", 
+                            "'+'", "'-'", "'*'", "'/'", "'#'", "';'", "'.'", 
                             "','", "'['", "']'", "'{'", "'}'", "'('", "')'" ];
     static symbolicNames = [ null, "If", "Int", "IntLiteral", "StringLiteral", 
-                             "AssignmentOP", "RelationalOP", "Star", "Divide", 
-                             "Plus", "Subtract", "Sharp", "SemiColon", "Dot", 
+                             "AssignmentOP", "RelationalOP", "ADD", "SUB", 
+                             "MUL", "DIV", "Sharp", "SemiColon", "Dot", 
                              "Comm", "LeftBracket", "RightBracket", "LeftBrace", 
                              "RightBrace", "LeftParen", "RightParen", "Id", 
                              "Whitespace", "Newline" ];
@@ -166,11 +166,12 @@ export default class LgmScriptParser extends antlr4.Parser {
 	        this.state = 31;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
-	        while(_la===LgmScriptParser.Plus || _la===LgmScriptParser.Subtract) {
+	        while(_la===LgmScriptParser.ADD || _la===LgmScriptParser.SUB) {
 	            this.state = 27;
+	            localctx.bop = this._input.LT(1);
 	            _la = this._input.LA(1);
-	            if(!(_la===LgmScriptParser.Plus || _la===LgmScriptParser.Subtract)) {
-	            this._errHandler.recoverInline(this);
+	            if(!(_la===LgmScriptParser.ADD || _la===LgmScriptParser.SUB)) {
+	                localctx.bop = this._errHandler.recoverInline(this);
 	            }
 	            else {
 	            	this._errHandler.reportMatch(this);
@@ -209,11 +210,12 @@ export default class LgmScriptParser extends antlr4.Parser {
 	        this.state = 39;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
-	        while(_la===LgmScriptParser.Star || _la===LgmScriptParser.Divide) {
+	        while(_la===LgmScriptParser.MUL || _la===LgmScriptParser.DIV) {
 	            this.state = 35;
+	            localctx.bop = this._input.LT(1);
 	            _la = this._input.LA(1);
-	            if(!(_la===LgmScriptParser.Star || _la===LgmScriptParser.Divide)) {
-	            this._errHandler.recoverInline(this);
+	            if(!(_la===LgmScriptParser.MUL || _la===LgmScriptParser.DIV)) {
+	                localctx.bop = this._errHandler.recoverInline(this);
 	            }
 	            else {
 	            	this._errHandler.reportMatch(this);
@@ -334,10 +336,10 @@ LgmScriptParser.IntLiteral = 3;
 LgmScriptParser.StringLiteral = 4;
 LgmScriptParser.AssignmentOP = 5;
 LgmScriptParser.RelationalOP = 6;
-LgmScriptParser.Star = 7;
-LgmScriptParser.Divide = 8;
-LgmScriptParser.Plus = 9;
-LgmScriptParser.Subtract = 10;
+LgmScriptParser.ADD = 7;
+LgmScriptParser.SUB = 8;
+LgmScriptParser.MUL = 9;
+LgmScriptParser.DIV = 10;
 LgmScriptParser.Sharp = 11;
 LgmScriptParser.SemiColon = 12;
 LgmScriptParser.Dot = 13;
@@ -482,6 +484,7 @@ class AdditiveContext extends antlr4.ParserRuleContext {
         super(parent, invokingState);
         this.parser = parser;
         this.ruleIndex = LgmScriptParser.RULE_additive;
+        this.bop = null; // Token
     }
 
 	multiplicative = function(i) {
@@ -495,26 +498,26 @@ class AdditiveContext extends antlr4.ParserRuleContext {
 	    }
 	};
 
-	Plus = function(i) {
+	ADD = function(i) {
 		if(i===undefined) {
 			i = null;
 		}
 	    if(i===null) {
-	        return this.getTokens(LgmScriptParser.Plus);
+	        return this.getTokens(LgmScriptParser.ADD);
 	    } else {
-	        return this.getToken(LgmScriptParser.Plus, i);
+	        return this.getToken(LgmScriptParser.ADD, i);
 	    }
 	};
 
 
-	Subtract = function(i) {
+	SUB = function(i) {
 		if(i===undefined) {
 			i = null;
 		}
 	    if(i===null) {
-	        return this.getTokens(LgmScriptParser.Subtract);
+	        return this.getTokens(LgmScriptParser.SUB);
 	    } else {
-	        return this.getToken(LgmScriptParser.Subtract, i);
+	        return this.getToken(LgmScriptParser.SUB, i);
 	    }
 	};
 
@@ -556,6 +559,7 @@ class MultiplicativeContext extends antlr4.ParserRuleContext {
         super(parent, invokingState);
         this.parser = parser;
         this.ruleIndex = LgmScriptParser.RULE_multiplicative;
+        this.bop = null; // Token
     }
 
 	primary = function(i) {
@@ -569,26 +573,26 @@ class MultiplicativeContext extends antlr4.ParserRuleContext {
 	    }
 	};
 
-	Star = function(i) {
+	MUL = function(i) {
 		if(i===undefined) {
 			i = null;
 		}
 	    if(i===null) {
-	        return this.getTokens(LgmScriptParser.Star);
+	        return this.getTokens(LgmScriptParser.MUL);
 	    } else {
-	        return this.getToken(LgmScriptParser.Star, i);
+	        return this.getToken(LgmScriptParser.MUL, i);
 	    }
 	};
 
 
-	Divide = function(i) {
+	DIV = function(i) {
 		if(i===undefined) {
 			i = null;
 		}
 	    if(i===null) {
-	        return this.getTokens(LgmScriptParser.Divide);
+	        return this.getTokens(LgmScriptParser.DIV);
 	    } else {
-	        return this.getToken(LgmScriptParser.Divide, i);
+	        return this.getToken(LgmScriptParser.DIV, i);
 	    }
 	};
 

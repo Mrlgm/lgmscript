@@ -17,9 +17,9 @@ public class LgmScriptLexer extends Lexer {
 		new PredictionContextCache();
 	public static final int
 		If=1, Int=2, IntLiteral=3, StringLiteral=4, AssignmentOP=5, RelationalOP=6, 
-		Star=7, Divide=8, Plus=9, Subtract=10, Sharp=11, SemiColon=12, Dot=13, 
-		Comm=14, LeftBracket=15, RightBracket=16, LeftBrace=17, RightBrace=18, 
-		LeftParen=19, RightParen=20, Id=21, Whitespace=22, Newline=23;
+		ADD=7, SUB=8, MUL=9, DIV=10, Sharp=11, SemiColon=12, Dot=13, Comm=14, 
+		LeftBracket=15, RightBracket=16, LeftBrace=17, RightBrace=18, LeftParen=19, 
+		RightParen=20, Id=21, Whitespace=22, Newline=23;
 	public static String[] channelNames = {
 		"DEFAULT_TOKEN_CHANNEL", "HIDDEN"
 	};
@@ -31,16 +31,16 @@ public class LgmScriptLexer extends Lexer {
 	private static String[] makeRuleNames() {
 		return new String[] {
 			"If", "Int", "IntLiteral", "StringLiteral", "AssignmentOP", "RelationalOP", 
-			"Star", "Divide", "Plus", "Subtract", "Sharp", "SemiColon", "Dot", "Comm", 
-			"LeftBracket", "RightBracket", "LeftBrace", "RightBrace", "LeftParen", 
-			"RightParen", "Id", "Whitespace", "Newline"
+			"ADD", "SUB", "MUL", "DIV", "Sharp", "SemiColon", "Dot", "Comm", "LeftBracket", 
+			"RightBracket", "LeftBrace", "RightBrace", "LeftParen", "RightParen", 
+			"Id", "Whitespace", "Newline"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, null, "'int'", null, null, "'='", null, "'*'", "'/'", "'+'", "'-'", 
+			null, null, "'int'", null, null, "'='", null, "'+'", "'-'", "'*'", "'/'", 
 			"'#'", "';'", "'.'", "','", "'['", "']'", "'{'", "'}'", "'('", "')'"
 		};
 	}
@@ -48,9 +48,9 @@ public class LgmScriptLexer extends Lexer {
 	private static String[] makeSymbolicNames() {
 		return new String[] {
 			null, "If", "Int", "IntLiteral", "StringLiteral", "AssignmentOP", "RelationalOP", 
-			"Star", "Divide", "Plus", "Subtract", "Sharp", "SemiColon", "Dot", "Comm", 
-			"LeftBracket", "RightBracket", "LeftBrace", "RightBrace", "LeftParen", 
-			"RightParen", "Id", "Whitespace", "Newline"
+			"ADD", "SUB", "MUL", "DIV", "Sharp", "SemiColon", "Dot", "Comm", "LeftBracket", 
+			"RightBracket", "LeftBrace", "RightBrace", "LeftParen", "RightParen", 
+			"Id", "Whitespace", "Newline"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -138,8 +138,8 @@ public class LgmScriptLexer extends Lexer {
 		"\3\2\2\2?\b\3\2\2\2@D\7$\2\2AC\13\2\2\2BA\3\2\2\2CF\3\2\2\2DE\3\2\2\2"+
 		"DB\3\2\2\2EG\3\2\2\2FD\3\2\2\2GH\7$\2\2H\n\3\2\2\2IJ\7?\2\2J\f\3\2\2\2"+
 		"KL\7?\2\2LT\7?\2\2MT\7@\2\2NO\7@\2\2OT\7?\2\2PT\7>\2\2QR\7>\2\2RT\7?\2"+
-		"\2SK\3\2\2\2SM\3\2\2\2SN\3\2\2\2SP\3\2\2\2SQ\3\2\2\2T\16\3\2\2\2UV\7,"+
-		"\2\2V\20\3\2\2\2WX\7\61\2\2X\22\3\2\2\2YZ\7-\2\2Z\24\3\2\2\2[\\\7/\2\2"+
+		"\2SK\3\2\2\2SM\3\2\2\2SN\3\2\2\2SP\3\2\2\2SQ\3\2\2\2T\16\3\2\2\2UV\7-"+
+		"\2\2V\20\3\2\2\2WX\7/\2\2X\22\3\2\2\2YZ\7,\2\2Z\24\3\2\2\2[\\\7\61\2\2"+
 		"\\\26\3\2\2\2]^\7%\2\2^\30\3\2\2\2_`\7=\2\2`\32\3\2\2\2ab\7\60\2\2b\34"+
 		"\3\2\2\2cd\7.\2\2d\36\3\2\2\2ef\7]\2\2f \3\2\2\2gh\7_\2\2h\"\3\2\2\2i"+
 		"j\7}\2\2j$\3\2\2\2kl\7\177\2\2l&\3\2\2\2mn\7*\2\2n(\3\2\2\2op\7+\2\2p"+

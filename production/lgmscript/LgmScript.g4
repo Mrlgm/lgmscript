@@ -44,10 +44,10 @@ StringLiteral: '"' .*? '"'; //字符串常量
 //操作符
 AssignmentOP: '=';
 RelationalOP: '==' | '>' | '>=' | '<' | '<=';
-Star: '*';
-Divide: '/';
-Plus: '+';
-Subtract: '-';
+ADD: '+';
+SUB: '-';
+MUL: '*';
+DIV: '/';
 Sharp: '#';
 SemiColon: ';';
 Dot: '.';
@@ -70,9 +70,9 @@ program: intDeclare | expressionStatement | assignmentStatement;
 
 intDeclare: Int Id ( AssignmentOP additive) SemiColon;
 
-additive: multiplicative ( ( Plus | Subtract) multiplicative)*;
+additive: multiplicative ( bop = ( ADD | SUB) multiplicative)*;
 
-multiplicative: primary ( ( Star | Divide) primary)*;
+multiplicative: primary ( bop = ( MUL | DIV) primary)*;
 
 primary: IntLiteral | Id;
 
