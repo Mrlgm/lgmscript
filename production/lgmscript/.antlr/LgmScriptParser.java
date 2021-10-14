@@ -121,31 +121,40 @@ public class LgmScriptParser extends Parser {
 	public final ProgramContext program() throws RecognitionException {
 		ProgramContext _localctx = new ProgramContext(_ctx, getState());
 		enterRule(_localctx, 0, RULE_program);
+		int _la;
 		try {
-			setState(17);
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(15);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,0,_ctx) ) {
-			case 1:
-				enterOuterAlt(_localctx, 1);
+			_la = _input.LA(1);
+			if (_la==Int) {
 				{
 				setState(14);
 				intDeclare();
 				}
-				break;
-			case 2:
-				enterOuterAlt(_localctx, 2);
+			}
+
+			setState(18);
+			_errHandler.sync(this);
+			switch ( getInterpreter().adaptivePredict(_input,1,_ctx) ) {
+			case 1:
 				{
-				setState(15);
+				setState(17);
 				expressionStatement();
 				}
 				break;
-			case 3:
-				enterOuterAlt(_localctx, 3);
+			}
+			setState(21);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			if (_la==Id) {
 				{
-				setState(16);
+				setState(20);
 				assignmentStatement();
 				}
-				break;
+			}
+
 			}
 		}
 		catch (RecognitionException re) {
@@ -176,20 +185,27 @@ public class LgmScriptParser extends Parser {
 	public final IntDeclareContext intDeclare() throws RecognitionException {
 		IntDeclareContext _localctx = new IntDeclareContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_intDeclare);
+		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(19);
+			setState(23);
 			match(Int);
-			setState(20);
-			match(Id);
-			{
-			setState(21);
-			match(AssignmentOP);
-			setState(22);
-			additive(0);
-			}
 			setState(24);
+			match(Id);
+			setState(27);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			if (_la==AssignmentOP) {
+				{
+				setState(25);
+				match(AssignmentOP);
+				setState(26);
+				additive(0);
+				}
+			}
+
+			setState(29);
 			match(SemiColon);
 			}
 		}
@@ -237,13 +253,13 @@ public class LgmScriptParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			{
-			setState(27);
+			setState(32);
 			multiplicative(0);
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(34);
+			setState(39);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,1,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,4,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
@@ -252,9 +268,9 @@ public class LgmScriptParser extends Parser {
 					{
 					_localctx = new AdditiveContext(_parentctx, _parentState);
 					pushNewRecursionContext(_localctx, _startState, RULE_additive);
-					setState(29);
+					setState(34);
 					if (!(precpred(_ctx, 1))) throw new FailedPredicateException(this, "precpred(_ctx, 1)");
-					setState(30);
+					setState(35);
 					((AdditiveContext)_localctx).bop = _input.LT(1);
 					_la = _input.LA(1);
 					if ( !(_la==ADD || _la==SUB) ) {
@@ -265,14 +281,14 @@ public class LgmScriptParser extends Parser {
 						_errHandler.reportMatch(this);
 						consume();
 					}
-					setState(31);
+					setState(36);
 					multiplicative(0);
 					}
 					} 
 				}
-				setState(36);
+				setState(41);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,1,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,4,_ctx);
 			}
 			}
 		}
@@ -320,13 +336,13 @@ public class LgmScriptParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			{
-			setState(38);
+			setState(43);
 			primary();
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(45);
+			setState(50);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,2,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,5,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
@@ -335,9 +351,9 @@ public class LgmScriptParser extends Parser {
 					{
 					_localctx = new MultiplicativeContext(_parentctx, _parentState);
 					pushNewRecursionContext(_localctx, _startState, RULE_multiplicative);
-					setState(40);
+					setState(45);
 					if (!(precpred(_ctx, 1))) throw new FailedPredicateException(this, "precpred(_ctx, 1)");
-					setState(41);
+					setState(46);
 					((MultiplicativeContext)_localctx).bop = _input.LT(1);
 					_la = _input.LA(1);
 					if ( !(_la==MUL || _la==DIV) ) {
@@ -348,14 +364,14 @@ public class LgmScriptParser extends Parser {
 						_errHandler.reportMatch(this);
 						consume();
 					}
-					setState(42);
+					setState(47);
 					primary();
 					}
 					} 
 				}
-				setState(47);
+				setState(52);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,2,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,5,_ctx);
 			}
 			}
 		}
@@ -386,7 +402,7 @@ public class LgmScriptParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(48);
+			setState(53);
 			_la = _input.LA(1);
 			if ( !(_la==IntLiteral || _la==Id) ) {
 			_errHandler.recoverInline(this);
@@ -426,9 +442,9 @@ public class LgmScriptParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(50);
+			setState(55);
 			additive(0);
-			setState(51);
+			setState(56);
 			match(SemiColon);
 			}
 		}
@@ -462,13 +478,13 @@ public class LgmScriptParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(53);
+			setState(58);
 			match(Id);
-			setState(54);
+			setState(59);
 			match(AssignmentOP);
-			setState(55);
+			setState(60);
 			additive(0);
-			setState(56);
+			setState(61);
 			match(SemiColon);
 			}
 		}
@@ -508,22 +524,23 @@ public class LgmScriptParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\31=\4\2\t\2\4\3\t"+
-		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\3\2\3\2\3\2\5\2\24\n\2\3\3"+
-		"\3\3\3\3\3\3\3\3\3\3\3\3\3\4\3\4\3\4\3\4\3\4\3\4\7\4#\n\4\f\4\16\4&\13"+
-		"\4\3\5\3\5\3\5\3\5\3\5\3\5\7\5.\n\5\f\5\16\5\61\13\5\3\6\3\6\3\7\3\7\3"+
-		"\7\3\b\3\b\3\b\3\b\3\b\3\b\2\4\6\b\t\2\4\6\b\n\f\16\2\5\3\2\t\n\3\2\13"+
-		"\f\4\2\5\5\27\27\29\2\23\3\2\2\2\4\25\3\2\2\2\6\34\3\2\2\2\b\'\3\2\2\2"+
-		"\n\62\3\2\2\2\f\64\3\2\2\2\16\67\3\2\2\2\20\24\5\4\3\2\21\24\5\f\7\2\22"+
-		"\24\5\16\b\2\23\20\3\2\2\2\23\21\3\2\2\2\23\22\3\2\2\2\24\3\3\2\2\2\25"+
-		"\26\7\4\2\2\26\27\7\27\2\2\27\30\7\7\2\2\30\31\5\6\4\2\31\32\3\2\2\2\32"+
-		"\33\7\16\2\2\33\5\3\2\2\2\34\35\b\4\1\2\35\36\5\b\5\2\36$\3\2\2\2\37 "+
-		"\f\3\2\2 !\t\2\2\2!#\5\b\5\2\"\37\3\2\2\2#&\3\2\2\2$\"\3\2\2\2$%\3\2\2"+
-		"\2%\7\3\2\2\2&$\3\2\2\2\'(\b\5\1\2()\5\n\6\2)/\3\2\2\2*+\f\3\2\2+,\t\3"+
-		"\2\2,.\5\n\6\2-*\3\2\2\2.\61\3\2\2\2/-\3\2\2\2/\60\3\2\2\2\60\t\3\2\2"+
-		"\2\61/\3\2\2\2\62\63\t\4\2\2\63\13\3\2\2\2\64\65\5\6\4\2\65\66\7\16\2"+
-		"\2\66\r\3\2\2\2\678\7\27\2\289\7\7\2\29:\5\6\4\2:;\7\16\2\2;\17\3\2\2"+
-		"\2\5\23$/";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\31B\4\2\t\2\4\3\t"+
+		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\3\2\5\2\22\n\2\3\2\5\2\25\n"+
+		"\2\3\2\5\2\30\n\2\3\3\3\3\3\3\3\3\5\3\36\n\3\3\3\3\3\3\4\3\4\3\4\3\4\3"+
+		"\4\3\4\7\4(\n\4\f\4\16\4+\13\4\3\5\3\5\3\5\3\5\3\5\3\5\7\5\63\n\5\f\5"+
+		"\16\5\66\13\5\3\6\3\6\3\7\3\7\3\7\3\b\3\b\3\b\3\b\3\b\3\b\2\4\6\b\t\2"+
+		"\4\6\b\n\f\16\2\5\3\2\t\n\3\2\13\f\4\2\5\5\27\27\2@\2\21\3\2\2\2\4\31"+
+		"\3\2\2\2\6!\3\2\2\2\b,\3\2\2\2\n\67\3\2\2\2\f9\3\2\2\2\16<\3\2\2\2\20"+
+		"\22\5\4\3\2\21\20\3\2\2\2\21\22\3\2\2\2\22\24\3\2\2\2\23\25\5\f\7\2\24"+
+		"\23\3\2\2\2\24\25\3\2\2\2\25\27\3\2\2\2\26\30\5\16\b\2\27\26\3\2\2\2\27"+
+		"\30\3\2\2\2\30\3\3\2\2\2\31\32\7\4\2\2\32\35\7\27\2\2\33\34\7\7\2\2\34"+
+		"\36\5\6\4\2\35\33\3\2\2\2\35\36\3\2\2\2\36\37\3\2\2\2\37 \7\16\2\2 \5"+
+		"\3\2\2\2!\"\b\4\1\2\"#\5\b\5\2#)\3\2\2\2$%\f\3\2\2%&\t\2\2\2&(\5\b\5\2"+
+		"\'$\3\2\2\2(+\3\2\2\2)\'\3\2\2\2)*\3\2\2\2*\7\3\2\2\2+)\3\2\2\2,-\b\5"+
+		"\1\2-.\5\n\6\2.\64\3\2\2\2/\60\f\3\2\2\60\61\t\3\2\2\61\63\5\n\6\2\62"+
+		"/\3\2\2\2\63\66\3\2\2\2\64\62\3\2\2\2\64\65\3\2\2\2\65\t\3\2\2\2\66\64"+
+		"\3\2\2\2\678\t\4\2\28\13\3\2\2\29:\5\6\4\2:;\7\16\2\2;\r\3\2\2\2<=\7\27"+
+		"\2\2=>\7\7\2\2>?\5\6\4\2?@\7\16\2\2@\17\3\2\2\2\b\21\24\27\35)\64";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

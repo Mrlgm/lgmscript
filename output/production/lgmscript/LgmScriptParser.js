@@ -6,41 +6,45 @@ import LgmScriptVisitor from './LgmScriptVisitor.js';
 
 
 const serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786",
-    "\u5964\u0003\u0019=\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004",
+    "\u5964\u0003\u0019B\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004",
     "\t\u0004\u0004\u0005\t\u0005\u0004\u0006\t\u0006\u0004\u0007\t\u0007",
-    "\u0004\b\t\b\u0003\u0002\u0003\u0002\u0003\u0002\u0005\u0002\u0014\n",
-    "\u0002\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003",
+    "\u0004\b\t\b\u0003\u0002\u0005\u0002\u0012\n\u0002\u0003\u0002\u0005",
+    "\u0002\u0015\n\u0002\u0003\u0002\u0005\u0002\u0018\n\u0002\u0003\u0003",
+    "\u0003\u0003\u0003\u0003\u0003\u0003\u0005\u0003\u001e\n\u0003\u0003",
     "\u0003\u0003\u0003\u0003\u0004\u0003\u0004\u0003\u0004\u0003\u0004\u0003",
-    "\u0004\u0003\u0004\u0007\u0004#\n\u0004\f\u0004\u000e\u0004&\u000b\u0004",
+    "\u0004\u0003\u0004\u0007\u0004(\n\u0004\f\u0004\u000e\u0004+\u000b\u0004",
     "\u0003\u0005\u0003\u0005\u0003\u0005\u0003\u0005\u0003\u0005\u0003\u0005",
-    "\u0007\u0005.\n\u0005\f\u0005\u000e\u00051\u000b\u0005\u0003\u0006\u0003",
+    "\u0007\u00053\n\u0005\f\u0005\u000e\u00056\u000b\u0005\u0003\u0006\u0003",
     "\u0006\u0003\u0007\u0003\u0007\u0003\u0007\u0003\b\u0003\b\u0003\b\u0003",
     "\b\u0003\b\u0003\b\u0002\u0004\u0006\b\t\u0002\u0004\u0006\b\n\f\u000e",
     "\u0002\u0005\u0003\u0002\t\n\u0003\u0002\u000b\f\u0004\u0002\u0005\u0005",
-    "\u0017\u0017\u00029\u0002\u0013\u0003\u0002\u0002\u0002\u0004\u0015",
-    "\u0003\u0002\u0002\u0002\u0006\u001c\u0003\u0002\u0002\u0002\b\'\u0003",
-    "\u0002\u0002\u0002\n2\u0003\u0002\u0002\u0002\f4\u0003\u0002\u0002\u0002",
-    "\u000e7\u0003\u0002\u0002\u0002\u0010\u0014\u0005\u0004\u0003\u0002",
-    "\u0011\u0014\u0005\f\u0007\u0002\u0012\u0014\u0005\u000e\b\u0002\u0013",
-    "\u0010\u0003\u0002\u0002\u0002\u0013\u0011\u0003\u0002\u0002\u0002\u0013",
-    "\u0012\u0003\u0002\u0002\u0002\u0014\u0003\u0003\u0002\u0002\u0002\u0015",
-    "\u0016\u0007\u0004\u0002\u0002\u0016\u0017\u0007\u0017\u0002\u0002\u0017",
-    "\u0018\u0007\u0007\u0002\u0002\u0018\u0019\u0005\u0006\u0004\u0002\u0019",
-    "\u001a\u0003\u0002\u0002\u0002\u001a\u001b\u0007\u000e\u0002\u0002\u001b",
-    "\u0005\u0003\u0002\u0002\u0002\u001c\u001d\b\u0004\u0001\u0002\u001d",
-    "\u001e\u0005\b\u0005\u0002\u001e$\u0003\u0002\u0002\u0002\u001f \f\u0003",
-    "\u0002\u0002 !\t\u0002\u0002\u0002!#\u0005\b\u0005\u0002\"\u001f\u0003",
-    "\u0002\u0002\u0002#&\u0003\u0002\u0002\u0002$\"\u0003\u0002\u0002\u0002",
-    "$%\u0003\u0002\u0002\u0002%\u0007\u0003\u0002\u0002\u0002&$\u0003\u0002",
-    "\u0002\u0002\'(\b\u0005\u0001\u0002()\u0005\n\u0006\u0002)/\u0003\u0002",
-    "\u0002\u0002*+\f\u0003\u0002\u0002+,\t\u0003\u0002\u0002,.\u0005\n\u0006",
-    "\u0002-*\u0003\u0002\u0002\u0002.1\u0003\u0002\u0002\u0002/-\u0003\u0002",
-    "\u0002\u0002/0\u0003\u0002\u0002\u00020\t\u0003\u0002\u0002\u00021/",
-    "\u0003\u0002\u0002\u000223\t\u0004\u0002\u00023\u000b\u0003\u0002\u0002",
-    "\u000245\u0005\u0006\u0004\u000256\u0007\u000e\u0002\u00026\r\u0003",
-    "\u0002\u0002\u000278\u0007\u0017\u0002\u000289\u0007\u0007\u0002\u0002",
-    "9:\u0005\u0006\u0004\u0002:;\u0007\u000e\u0002\u0002;\u000f\u0003\u0002",
-    "\u0002\u0002\u0005\u0013$/"].join("");
+    "\u0017\u0017\u0002@\u0002\u0011\u0003\u0002\u0002\u0002\u0004\u0019",
+    "\u0003\u0002\u0002\u0002\u0006!\u0003\u0002\u0002\u0002\b,\u0003\u0002",
+    "\u0002\u0002\n7\u0003\u0002\u0002\u0002\f9\u0003\u0002\u0002\u0002\u000e",
+    "<\u0003\u0002\u0002\u0002\u0010\u0012\u0005\u0004\u0003\u0002\u0011",
+    "\u0010\u0003\u0002\u0002\u0002\u0011\u0012\u0003\u0002\u0002\u0002\u0012",
+    "\u0014\u0003\u0002\u0002\u0002\u0013\u0015\u0005\f\u0007\u0002\u0014",
+    "\u0013\u0003\u0002\u0002\u0002\u0014\u0015\u0003\u0002\u0002\u0002\u0015",
+    "\u0017\u0003\u0002\u0002\u0002\u0016\u0018\u0005\u000e\b\u0002\u0017",
+    "\u0016\u0003\u0002\u0002\u0002\u0017\u0018\u0003\u0002\u0002\u0002\u0018",
+    "\u0003\u0003\u0002\u0002\u0002\u0019\u001a\u0007\u0004\u0002\u0002\u001a",
+    "\u001d\u0007\u0017\u0002\u0002\u001b\u001c\u0007\u0007\u0002\u0002\u001c",
+    "\u001e\u0005\u0006\u0004\u0002\u001d\u001b\u0003\u0002\u0002\u0002\u001d",
+    "\u001e\u0003\u0002\u0002\u0002\u001e\u001f\u0003\u0002\u0002\u0002\u001f",
+    " \u0007\u000e\u0002\u0002 \u0005\u0003\u0002\u0002\u0002!\"\b\u0004",
+    "\u0001\u0002\"#\u0005\b\u0005\u0002#)\u0003\u0002\u0002\u0002$%\f\u0003",
+    "\u0002\u0002%&\t\u0002\u0002\u0002&(\u0005\b\u0005\u0002\'$\u0003\u0002",
+    "\u0002\u0002(+\u0003\u0002\u0002\u0002)\'\u0003\u0002\u0002\u0002)*",
+    "\u0003\u0002\u0002\u0002*\u0007\u0003\u0002\u0002\u0002+)\u0003\u0002",
+    "\u0002\u0002,-\b\u0005\u0001\u0002-.\u0005\n\u0006\u0002.4\u0003\u0002",
+    "\u0002\u0002/0\f\u0003\u0002\u000201\t\u0003\u0002\u000213\u0005\n\u0006",
+    "\u00022/\u0003\u0002\u0002\u000236\u0003\u0002\u0002\u000242\u0003\u0002",
+    "\u0002\u000245\u0003\u0002\u0002\u00025\t\u0003\u0002\u0002\u000264",
+    "\u0003\u0002\u0002\u000278\t\u0004\u0002\u00028\u000b\u0003\u0002\u0002",
+    "\u00029:\u0005\u0006\u0004\u0002:;\u0007\u000e\u0002\u0002;\r\u0003",
+    "\u0002\u0002\u0002<=\u0007\u0017\u0002\u0002=>\u0007\u0007\u0002\u0002",
+    ">?\u0005\u0006\u0004\u0002?@\u0007\u000e\u0002\u0002@\u000f\u0003\u0002",
+    "\u0002\u0002\b\u0011\u0014\u0017\u001d)4"].join("");
 
 
 const atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
@@ -116,30 +120,33 @@ export default class LgmScriptParser extends antlr4.Parser {
 	program() {
 	    let localctx = new ProgramContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 0, LgmScriptParser.RULE_program);
+	    var _la = 0; // Token type
 	    try {
-	        this.state = 17;
+	        this.enterOuterAlt(localctx, 1);
+	        this.state = 15;
 	        this._errHandler.sync(this);
-	        var la_ = this._interp.adaptivePredict(this._input,0,this._ctx);
-	        switch(la_) {
-	        case 1:
-	            this.enterOuterAlt(localctx, 1);
+	        _la = this._input.LA(1);
+	        if(_la===LgmScriptParser.Int) {
 	            this.state = 14;
 	            this.intDeclare();
-	            break;
+	        }
 
-	        case 2:
-	            this.enterOuterAlt(localctx, 2);
-	            this.state = 15;
+	        this.state = 18;
+	        this._errHandler.sync(this);
+	        var la_ = this._interp.adaptivePredict(this._input,1,this._ctx);
+	        if(la_===1) {
+	            this.state = 17;
 	            this.expressionStatement();
-	            break;
-
-	        case 3:
-	            this.enterOuterAlt(localctx, 3);
-	            this.state = 16;
-	            this.assignmentStatement();
-	            break;
 
 	        }
+	        this.state = 21;
+	        this._errHandler.sync(this);
+	        _la = this._input.LA(1);
+	        if(_la===LgmScriptParser.Id) {
+	            this.state = 20;
+	            this.assignmentStatement();
+	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -159,18 +166,24 @@ export default class LgmScriptParser extends antlr4.Parser {
 	intDeclare() {
 	    let localctx = new IntDeclareContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 2, LgmScriptParser.RULE_intDeclare);
+	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 19;
+	        this.state = 23;
 	        this.match(LgmScriptParser.Int);
-	        this.state = 20;
-	        this.match(LgmScriptParser.Id);
-
-	        this.state = 21;
-	        this.match(LgmScriptParser.AssignmentOP);
-	        this.state = 22;
-	        this.additive(0);
 	        this.state = 24;
+	        this.match(LgmScriptParser.Id);
+	        this.state = 27;
+	        this._errHandler.sync(this);
+	        _la = this._input.LA(1);
+	        if(_la===LgmScriptParser.AssignmentOP) {
+	            this.state = 25;
+	            this.match(LgmScriptParser.AssignmentOP);
+	            this.state = 26;
+	            this.additive(0);
+	        }
+
+	        this.state = 29;
 	        this.match(LgmScriptParser.SemiColon);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -200,12 +213,12 @@ export default class LgmScriptParser extends antlr4.Parser {
 	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 27;
+	        this.state = 32;
 	        this.multiplicative(0);
 	        this._ctx.stop = this._input.LT(-1);
-	        this.state = 34;
+	        this.state = 39;
 	        this._errHandler.sync(this);
-	        var _alt = this._interp.adaptivePredict(this._input,1,this._ctx)
+	        var _alt = this._interp.adaptivePredict(this._input,4,this._ctx)
 	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
 	            if(_alt===1) {
 	                if(this._parseListeners!==null) {
@@ -214,11 +227,11 @@ export default class LgmScriptParser extends antlr4.Parser {
 	                _prevctx = localctx;
 	                localctx = new AdditiveContext(this, _parentctx, _parentState);
 	                this.pushNewRecursionContext(localctx, _startState, LgmScriptParser.RULE_additive);
-	                this.state = 29;
+	                this.state = 34;
 	                if (!( this.precpred(this._ctx, 1))) {
 	                    throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 1)");
 	                }
-	                this.state = 30;
+	                this.state = 35;
 	                localctx.bop = this._input.LT(1);
 	                _la = this._input.LA(1);
 	                if(!(_la===LgmScriptParser.ADD || _la===LgmScriptParser.SUB)) {
@@ -228,12 +241,12 @@ export default class LgmScriptParser extends antlr4.Parser {
 	                	this._errHandler.reportMatch(this);
 	                    this.consume();
 	                }
-	                this.state = 31;
+	                this.state = 36;
 	                this.multiplicative(0); 
 	            }
-	            this.state = 36;
+	            this.state = 41;
 	            this._errHandler.sync(this);
-	            _alt = this._interp.adaptivePredict(this._input,1,this._ctx);
+	            _alt = this._interp.adaptivePredict(this._input,4,this._ctx);
 	        }
 
 	    } catch( error) {
@@ -264,12 +277,12 @@ export default class LgmScriptParser extends antlr4.Parser {
 	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 38;
+	        this.state = 43;
 	        this.primary();
 	        this._ctx.stop = this._input.LT(-1);
-	        this.state = 45;
+	        this.state = 50;
 	        this._errHandler.sync(this);
-	        var _alt = this._interp.adaptivePredict(this._input,2,this._ctx)
+	        var _alt = this._interp.adaptivePredict(this._input,5,this._ctx)
 	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
 	            if(_alt===1) {
 	                if(this._parseListeners!==null) {
@@ -278,11 +291,11 @@ export default class LgmScriptParser extends antlr4.Parser {
 	                _prevctx = localctx;
 	                localctx = new MultiplicativeContext(this, _parentctx, _parentState);
 	                this.pushNewRecursionContext(localctx, _startState, LgmScriptParser.RULE_multiplicative);
-	                this.state = 40;
+	                this.state = 45;
 	                if (!( this.precpred(this._ctx, 1))) {
 	                    throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 1)");
 	                }
-	                this.state = 41;
+	                this.state = 46;
 	                localctx.bop = this._input.LT(1);
 	                _la = this._input.LA(1);
 	                if(!(_la===LgmScriptParser.MUL || _la===LgmScriptParser.DIV)) {
@@ -292,12 +305,12 @@ export default class LgmScriptParser extends antlr4.Parser {
 	                	this._errHandler.reportMatch(this);
 	                    this.consume();
 	                }
-	                this.state = 42;
+	                this.state = 47;
 	                this.primary(); 
 	            }
-	            this.state = 47;
+	            this.state = 52;
 	            this._errHandler.sync(this);
-	            _alt = this._interp.adaptivePredict(this._input,2,this._ctx);
+	            _alt = this._interp.adaptivePredict(this._input,5,this._ctx);
 	        }
 
 	    } catch( error) {
@@ -322,7 +335,7 @@ export default class LgmScriptParser extends antlr4.Parser {
 	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 48;
+	        this.state = 53;
 	        _la = this._input.LA(1);
 	        if(!(_la===LgmScriptParser.IntLiteral || _la===LgmScriptParser.Id)) {
 	        this._errHandler.recoverInline(this);
@@ -352,9 +365,9 @@ export default class LgmScriptParser extends antlr4.Parser {
 	    this.enterRule(localctx, 10, LgmScriptParser.RULE_expressionStatement);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 50;
+	        this.state = 55;
 	        this.additive(0);
-	        this.state = 51;
+	        this.state = 56;
 	        this.match(LgmScriptParser.SemiColon);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -377,13 +390,13 @@ export default class LgmScriptParser extends antlr4.Parser {
 	    this.enterRule(localctx, 12, LgmScriptParser.RULE_assignmentStatement);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 53;
+	        this.state = 58;
 	        this.match(LgmScriptParser.Id);
-	        this.state = 54;
+	        this.state = 59;
 	        this.match(LgmScriptParser.AssignmentOP);
-	        this.state = 55;
+	        this.state = 60;
 	        this.additive(0);
-	        this.state = 56;
+	        this.state = 61;
 	        this.match(LgmScriptParser.SemiColon);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {

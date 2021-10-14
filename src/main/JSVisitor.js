@@ -6,11 +6,25 @@ export default class JSVisitor extends LgmScriptVisitor {
     super();
   }
 
+  map = {};
+
   visitProgram(ctx) {
     console.log("进入程序");
-    // console.log(ctx);
-    let value = this.visit(ctx.expressionStatement());
-    console.log("程序结果", value[0]);
+    let value;
+
+    if (ctx.intDeclare()) {
+      this.visit(ctx.intDeclare());
+    }
+
+    if (ctx.expressionStatement()) {
+      value = this.visit(ctx.expressionStatement());
+      console.log("程序结果", value[0]);
+    }
+
+    if (ctx.assignmentStatement()) {
+      this.visit(ctx.assignmentStatement());
+    }
+
     return 0;
   }
 
@@ -33,8 +47,11 @@ export default class JSVisitor extends LgmScriptVisitor {
   }
 
   visitIntDeclare(ctx) {
-    // console.log("触发声明");
-    return this.visitChildren(ctx);
+    const id = ctx.Id().getText();
+    let value = null;
+    if (ctx.additive()) value = this.visit(ctx.additive());
+    this.map[id] = value;
+    return value;
   }
 
   visitMultiplicative(ctx) {
@@ -50,7 +67,7 @@ export default class JSVisitor extends LgmScriptVisitor {
           break;
       }
     } else {
-      value = this.visit(ctx.primary(0));
+      value = this.visit(ctx.primary());
     }
 
     return value;
@@ -62,6 +79,7 @@ export default class JSVisitor extends LgmScriptVisitor {
     // switch (){
 
     // }
-    return Number(ctx.IntLiteral().getText());
+    if (ctx.IntLiteral()) return Number(ctx.IntLiteral().getText());
+    if (ctx.Id()) return this.map[ctx.Id().getText()];
   }
 }

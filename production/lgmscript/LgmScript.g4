@@ -66,9 +66,10 @@ Id: [a-zA-Z_] ([a-zA-Z_] | [0-9])*;
 Whitespace: [ \t]+ -> skip;
 Newline: ( '\r' '\n'? | '\n') -> skip;
 
-program: intDeclare | expressionStatement | assignmentStatement;
+program:
+	intDeclare? expressionStatement? assignmentStatement? ;
 
-intDeclare: Int Id ( AssignmentOP additive) SemiColon;
+intDeclare: Int Id (AssignmentOP additive)? SemiColon;
 
 additive:
 	multiplicative
