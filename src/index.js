@@ -4,7 +4,7 @@ import LgmScriptParser from "../output/production/lgmscript/LgmScriptParser.js";
 import JSVisitor from "./main/JSVisitor.js";
 import JSListener from "./main/JSListener.js";
 
-const input = `10 + 4 * 5;`;
+const input = `10 + 4 * 5 + 10/2*3 +10;`;
 const chars = new antlr4.InputStream(input);
 const lexer = new LgmScriptLexer(chars);
 const tokens = new antlr4.CommonTokenStream(lexer);

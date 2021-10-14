@@ -70,9 +70,13 @@ program: intDeclare | expressionStatement | assignmentStatement;
 
 intDeclare: Int Id ( AssignmentOP additive) SemiColon;
 
-additive: multiplicative ( bop = ( ADD | SUB) multiplicative)*;
+additive:
+	multiplicative
+	| additive bop = ( ADD | SUB) multiplicative;
 
-multiplicative: primary ( bop = ( MUL | DIV) primary)*;
+multiplicative:
+	primary
+	| multiplicative bop = ( MUL | DIV) primary;
 
 primary: IntLiteral | Id;
 

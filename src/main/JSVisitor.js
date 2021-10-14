@@ -20,23 +20,15 @@ export default class JSVisitor extends LgmScriptVisitor {
     if (ctx.bop) {
       switch (ctx.bop.type) {
         case LgmScriptParser.ADD:
-          value =
-            this.visit(ctx.multiplicative(0)) +
-            this.visit(ctx.multiplicative(1));
+          value = this.visit(ctx.additive()) + this.visit(ctx.multiplicative());
           break;
         case LgmScriptParser.SUB:
-          value =
-            this.visit(ctx.multiplicative(0)) -
-            this.visit(ctx.multiplicative(1));
+          value = this.visit(ctx.additive()) - this.visit(ctx.multiplicative());
           break;
       }
     } else {
-      value = this.visit(ctx.multiplicative(0));
+      value = this.visit(ctx.multiplicative());
     }
-
-    // console.log(ctx.multiplicative(0));
-    // console.log(ctx.multiplicative(1));
-    // console.log("触发加法元素", value);
     return value;
   }
 
@@ -51,17 +43,16 @@ export default class JSVisitor extends LgmScriptVisitor {
     if (ctx.bop) {
       switch (ctx.bop.type) {
         case LgmScriptParser.MUL:
-          value = this.visit(ctx.primary(0)) * this.visit(ctx.primary(1));
+          value = this.visit(ctx.multiplicative()) * this.visit(ctx.primary());
           break;
         case LgmScriptParser.DIV:
-          value = this.visit(ctx.primary(0)) / this.visit(ctx.primary(1));
+          value = this.visit(ctx.multiplicative()) / this.visit(ctx.primary());
           break;
       }
     } else {
       value = this.visit(ctx.primary(0));
     }
 
-    console.log("监听乘法元素", ctx);
     return value;
   }
 
