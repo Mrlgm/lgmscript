@@ -12,19 +12,10 @@ export default class JSVisitor extends LgmScriptVisitor {
     console.log("进入程序");
     let value;
 
-    if (ctx.intDeclare()) {
-      this.visit(ctx.intDeclare());
-    }
-
-    if (ctx.expressionStatement()) {
-      value = this.visit(ctx.expressionStatement());
+    for (const item of ctx.children) {
+      value = this.visit(item);
       console.log("程序结果", value[0]);
     }
-
-    if (ctx.assignmentStatement()) {
-      this.visit(ctx.assignmentStatement());
-    }
-
     return 0;
   }
 
