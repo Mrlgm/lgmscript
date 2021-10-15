@@ -92,4 +92,4 @@ expression: additive;
 
 assignmentStatement: Id AssignmentOP additive SemiColon;
 
-ifStatement: If '(' expression ')' expression (Else expression)?;
+ifStatement: If '(' expression ')' program (Else program)?;

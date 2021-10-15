@@ -50,8 +50,8 @@ const serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786",
     "\u0002DE\u0007\u0018\u0002\u0002EF\u0007\b\u0002\u0002FG\u0005\u0006",
     "\u0004\u0002GH\u0007\u000f\u0002\u0002H\u0011\u0003\u0002\u0002\u0002",
     "IJ\u0007\u0003\u0002\u0002JK\u0007\u0016\u0002\u0002KL\u0005\u000e\b",
-    "\u0002LM\u0007\u0017\u0002\u0002MP\u0005\u000e\b\u0002NO\u0007\u0004",
-    "\u0002\u0002OQ\u0005\u000e\b\u0002PN\u0003\u0002\u0002\u0002PQ\u0003",
+    "\u0002LM\u0007\u0017\u0002\u0002MP\u0005\u0002\u0002\u0002NO\u0007\u0004",
+    "\u0002\u0002OQ\u0005\u0002\u0002\u0002PN\u0003\u0002\u0002\u0002PQ\u0003",
     "\u0002\u0002\u0002Q\u0013\u0003\u0002\u0002\u0002\t\u0018\u001a!-8>",
     "P"].join("");
 
@@ -131,42 +131,44 @@ export default class LgmScriptParser extends antlr4.Parser {
 	program() {
 	    let localctx = new ProgramContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 0, LgmScriptParser.RULE_program);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 24;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        while((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << LgmScriptParser.If) | (1 << LgmScriptParser.Int) | (1 << LgmScriptParser.IntLiteral) | (1 << LgmScriptParser.SemiColon) | (1 << LgmScriptParser.Id))) !== 0)) {
-	            this.state = 22;
-	            this._errHandler.sync(this);
-	            var la_ = this._interp.adaptivePredict(this._input,0,this._ctx);
-	            switch(la_) {
-	            case 1:
-	                this.state = 18;
-	                this.intDeclare();
-	                break;
+	        var _alt = this._interp.adaptivePredict(this._input,1,this._ctx)
+	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+	            if(_alt===1) {
+	                this.state = 22;
+	                this._errHandler.sync(this);
+	                var la_ = this._interp.adaptivePredict(this._input,0,this._ctx);
+	                switch(la_) {
+	                case 1:
+	                    this.state = 18;
+	                    this.intDeclare();
+	                    break;
 
-	            case 2:
-	                this.state = 19;
-	                this.expressionStatement();
-	                break;
+	                case 2:
+	                    this.state = 19;
+	                    this.expressionStatement();
+	                    break;
 
-	            case 3:
-	                this.state = 20;
-	                this.assignmentStatement();
-	                break;
+	                case 3:
+	                    this.state = 20;
+	                    this.assignmentStatement();
+	                    break;
 
-	            case 4:
-	                this.state = 21;
-	                this.ifStatement();
-	                break;
+	                case 4:
+	                    this.state = 21;
+	                    this.ifStatement();
+	                    break;
 
+	                } 
 	            }
 	            this.state = 26;
 	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
+	            _alt = this._interp.adaptivePredict(this._input,1,this._ctx);
 	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -467,7 +469,6 @@ export default class LgmScriptParser extends antlr4.Parser {
 	ifStatement() {
 	    let localctx = new IfStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 16, LgmScriptParser.RULE_ifStatement);
-	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 71;
@@ -479,17 +480,17 @@ export default class LgmScriptParser extends antlr4.Parser {
 	        this.state = 74;
 	        this.match(LgmScriptParser.RightParen);
 	        this.state = 75;
-	        this.expression();
+	        this.program();
 	        this.state = 78;
 	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        if(_la===LgmScriptParser.Else) {
+	        var la_ = this._interp.adaptivePredict(this._input,6,this._ctx);
+	        if(la_===1) {
 	            this.state = 76;
 	            this.match(LgmScriptParser.Else);
 	            this.state = 77;
-	            this.expression();
-	        }
+	            this.program();
 
+	        }
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -1011,19 +1012,23 @@ class IfStatementContext extends antlr4.ParserRuleContext {
 	    return this.getToken(LgmScriptParser.LeftParen, 0);
 	};
 
-	expression = function(i) {
-	    if(i===undefined) {
-	        i = null;
-	    }
-	    if(i===null) {
-	        return this.getTypedRuleContexts(ExpressionContext);
-	    } else {
-	        return this.getTypedRuleContext(ExpressionContext,i);
-	    }
+	expression() {
+	    return this.getTypedRuleContext(ExpressionContext,0);
 	};
 
 	RightParen() {
 	    return this.getToken(LgmScriptParser.RightParen, 0);
+	};
+
+	program = function(i) {
+	    if(i===undefined) {
+	        i = null;
+	    }
+	    if(i===null) {
+	        return this.getTypedRuleContexts(ProgramContext);
+	    } else {
+	        return this.getTypedRuleContext(ProgramContext,i);
+	    }
 	};
 
 	Else() {

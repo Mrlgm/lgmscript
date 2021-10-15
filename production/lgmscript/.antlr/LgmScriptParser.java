@@ -138,47 +138,49 @@ public class LgmScriptParser extends Parser {
 	public final ProgramContext program() throws RecognitionException {
 		ProgramContext _localctx = new ProgramContext(_ctx, getState());
 		enterRule(_localctx, 0, RULE_program);
-		int _la;
 		try {
+			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(24);
 			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << If) | (1L << Int) | (1L << IntLiteral) | (1L << SemiColon) | (1L << Id))) != 0)) {
-				{
-				setState(22);
-				_errHandler.sync(this);
-				switch ( getInterpreter().adaptivePredict(_input,0,_ctx) ) {
-				case 1:
+			_alt = getInterpreter().adaptivePredict(_input,1,_ctx);
+			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+				if ( _alt==1 ) {
 					{
-					setState(18);
-					intDeclare();
+					setState(22);
+					_errHandler.sync(this);
+					switch ( getInterpreter().adaptivePredict(_input,0,_ctx) ) {
+					case 1:
+						{
+						setState(18);
+						intDeclare();
+						}
+						break;
+					case 2:
+						{
+						setState(19);
+						expressionStatement();
+						}
+						break;
+					case 3:
+						{
+						setState(20);
+						assignmentStatement();
+						}
+						break;
+					case 4:
+						{
+						setState(21);
+						ifStatement();
+						}
+						break;
 					}
-					break;
-				case 2:
-					{
-					setState(19);
-					expressionStatement();
-					}
-					break;
-				case 3:
-					{
-					setState(20);
-					assignmentStatement();
-					}
-					break;
-				case 4:
-					{
-					setState(21);
-					ifStatement();
-					}
-					break;
-				}
+					} 
 				}
 				setState(26);
 				_errHandler.sync(this);
-				_la = _input.LA(1);
+				_alt = getInterpreter().adaptivePredict(_input,1,_ctx);
 			}
 			}
 		}
@@ -567,13 +569,16 @@ public class LgmScriptParser extends Parser {
 	public static class IfStatementContext extends ParserRuleContext {
 		public TerminalNode If() { return getToken(LgmScriptParser.If, 0); }
 		public TerminalNode LeftParen() { return getToken(LgmScriptParser.LeftParen, 0); }
-		public List<ExpressionContext> expression() {
-			return getRuleContexts(ExpressionContext.class);
-		}
-		public ExpressionContext expression(int i) {
-			return getRuleContext(ExpressionContext.class,i);
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
 		}
 		public TerminalNode RightParen() { return getToken(LgmScriptParser.RightParen, 0); }
+		public List<ProgramContext> program() {
+			return getRuleContexts(ProgramContext.class);
+		}
+		public ProgramContext program(int i) {
+			return getRuleContext(ProgramContext.class,i);
+		}
 		public TerminalNode Else() { return getToken(LgmScriptParser.Else, 0); }
 		public IfStatementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -584,7 +589,6 @@ public class LgmScriptParser extends Parser {
 	public final IfStatementContext ifStatement() throws RecognitionException {
 		IfStatementContext _localctx = new IfStatementContext(_ctx, getState());
 		enterRule(_localctx, 16, RULE_ifStatement);
-		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -597,19 +601,19 @@ public class LgmScriptParser extends Parser {
 			setState(74);
 			match(RightParen);
 			setState(75);
-			expression();
+			program();
 			setState(78);
 			_errHandler.sync(this);
-			_la = _input.LA(1);
-			if (_la==Else) {
+			switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
+			case 1:
 				{
 				setState(76);
 				match(Else);
 				setState(77);
-				expression();
+				program();
 				}
+				break;
 			}
-
 			}
 		}
 		catch (RecognitionException re) {
@@ -667,8 +671,8 @@ public class LgmScriptParser extends Parser {
 		"\2\2\29\t\3\2\2\2:8\3\2\2\2;<\t\4\2\2<\13\3\2\2\2=?\5\16\b\2>=\3\2\2\2"+
 		">?\3\2\2\2?@\3\2\2\2@A\7\17\2\2A\r\3\2\2\2BC\5\6\4\2C\17\3\2\2\2DE\7\30"+
 		"\2\2EF\7\b\2\2FG\5\6\4\2GH\7\17\2\2H\21\3\2\2\2IJ\7\3\2\2JK\7\26\2\2K"+
-		"L\5\16\b\2LM\7\27\2\2MP\5\16\b\2NO\7\4\2\2OQ\5\16\b\2PN\3\2\2\2PQ\3\2"+
-		"\2\2Q\23\3\2\2\2\t\30\32!-8>P";
+		"L\5\16\b\2LM\7\27\2\2MP\5\2\2\2NO\7\4\2\2OQ\5\2\2\2PN\3\2\2\2PQ\3\2\2"+
+		"\2Q\23\3\2\2\2\t\30\32!-8>P";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

@@ -29,11 +29,11 @@ export default class JSVisitor extends LgmScriptVisitor {
     const condition = this.visit(ctx.expression(0));
     let value;
     if (condition) {
-      value = this.visit(ctx.expression(1));
+      value = this.visit(ctx.program(0));
       console.log(value);
     } else {
       if (ctx.Else()) {
-        value = this.visit(ctx.expression(2));
+        value = this.visit(ctx.program(1));
         console.log(value);
       }
     }
