@@ -42,8 +42,20 @@ export default class LgmScriptVisitor extends antlr4.tree.ParseTreeVisitor {
 	}
 
 
+	// Visit a parse tree produced by LgmScriptParser#expression.
+	visitExpression(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
 	// Visit a parse tree produced by LgmScriptParser#assignmentStatement.
 	visitAssignmentStatement(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by LgmScriptParser#ifStatement.
+	visitIfStatement(ctx) {
 	  return this.visitChildren(ctx);
 	}
 

@@ -35,6 +35,7 @@ LgmScriptParser.prototype.start = function() {
 
 //关键字
 If: 'if' | '如果'; //可以在程序里用‘如果’来代替'if'
+Else: 'else';
 Int: 'int';
 
 //常量
@@ -66,7 +67,12 @@ Id: [a-zA-Z_] ([a-zA-Z_] | [0-9])*;
 Whitespace: [ \t]+ -> skip;
 Newline: ( '\r' '\n'? | '\n') -> skip;
 
-program: (intDeclare | expressionStatement | assignmentStatement)*;
+program: (
+		intDeclare
+		| expressionStatement
+		| assignmentStatement
+		| ifStatement
+	)*;
 
 intDeclare: Int Id (AssignmentOP additive)? SemiColon;
 
@@ -80,6 +86,10 @@ multiplicative:
 
 primary: IntLiteral | Id;
 
-expressionStatement: additive SemiColon;
+expressionStatement: expression? SemiColon;
+
+expression: additive;
 
 assignmentStatement: Id AssignmentOP additive SemiColon;
+
+ifStatement: If '(' expression ')' expression (Else expression)?;

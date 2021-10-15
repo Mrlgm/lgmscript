@@ -6,45 +6,54 @@ import LgmScriptVisitor from './LgmScriptVisitor.js';
 
 
 const serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786",
-    "\u5964\u0003\u0019A\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004",
+    "\u5964\u0003\u001aS\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004",
     "\t\u0004\u0004\u0005\t\u0005\u0004\u0006\t\u0006\u0004\u0007\t\u0007",
-    "\u0004\b\t\b\u0003\u0002\u0003\u0002\u0003\u0002\u0007\u0002\u0014\n",
-    "\u0002\f\u0002\u000e\u0002\u0017\u000b\u0002\u0003\u0003\u0003\u0003",
-    "\u0003\u0003\u0003\u0003\u0005\u0003\u001d\n\u0003\u0003\u0003\u0003",
-    "\u0003\u0003\u0004\u0003\u0004\u0003\u0004\u0003\u0004\u0003\u0004\u0003",
-    "\u0004\u0007\u0004\'\n\u0004\f\u0004\u000e\u0004*\u000b\u0004\u0003",
-    "\u0005\u0003\u0005\u0003\u0005\u0003\u0005\u0003\u0005\u0003\u0005\u0007",
-    "\u00052\n\u0005\f\u0005\u000e\u00055\u000b\u0005\u0003\u0006\u0003\u0006",
-    "\u0003\u0007\u0003\u0007\u0003\u0007\u0003\b\u0003\b\u0003\b\u0003\b",
-    "\u0003\b\u0003\b\u0002\u0004\u0006\b\t\u0002\u0004\u0006\b\n\f\u000e",
-    "\u0002\u0005\u0003\u0002\t\n\u0003\u0002\u000b\f\u0004\u0002\u0005\u0005",
-    "\u0017\u0017\u0002?\u0002\u0015\u0003\u0002\u0002\u0002\u0004\u0018",
-    "\u0003\u0002\u0002\u0002\u0006 \u0003\u0002\u0002\u0002\b+\u0003\u0002",
-    "\u0002\u0002\n6\u0003\u0002\u0002\u0002\f8\u0003\u0002\u0002\u0002\u000e",
-    ";\u0003\u0002\u0002\u0002\u0010\u0014\u0005\u0004\u0003\u0002\u0011",
-    "\u0014\u0005\f\u0007\u0002\u0012\u0014\u0005\u000e\b\u0002\u0013\u0010",
-    "\u0003\u0002\u0002\u0002\u0013\u0011\u0003\u0002\u0002\u0002\u0013\u0012",
-    "\u0003\u0002\u0002\u0002\u0014\u0017\u0003\u0002\u0002\u0002\u0015\u0013",
-    "\u0003\u0002\u0002\u0002\u0015\u0016\u0003\u0002\u0002\u0002\u0016\u0003",
-    "\u0003\u0002\u0002\u0002\u0017\u0015\u0003\u0002\u0002\u0002\u0018\u0019",
-    "\u0007\u0004\u0002\u0002\u0019\u001c\u0007\u0017\u0002\u0002\u001a\u001b",
-    "\u0007\u0007\u0002\u0002\u001b\u001d\u0005\u0006\u0004\u0002\u001c\u001a",
-    "\u0003\u0002\u0002\u0002\u001c\u001d\u0003\u0002\u0002\u0002\u001d\u001e",
-    "\u0003\u0002\u0002\u0002\u001e\u001f\u0007\u000e\u0002\u0002\u001f\u0005",
-    "\u0003\u0002\u0002\u0002 !\b\u0004\u0001\u0002!\"\u0005\b\u0005\u0002",
-    "\"(\u0003\u0002\u0002\u0002#$\f\u0003\u0002\u0002$%\t\u0002\u0002\u0002",
-    "%\'\u0005\b\u0005\u0002&#\u0003\u0002\u0002\u0002\'*\u0003\u0002\u0002",
-    "\u0002(&\u0003\u0002\u0002\u0002()\u0003\u0002\u0002\u0002)\u0007\u0003",
-    "\u0002\u0002\u0002*(\u0003\u0002\u0002\u0002+,\b\u0005\u0001\u0002,",
-    "-\u0005\n\u0006\u0002-3\u0003\u0002\u0002\u0002./\f\u0003\u0002\u0002",
-    "/0\t\u0003\u0002\u000202\u0005\n\u0006\u00021.\u0003\u0002\u0002\u0002",
-    "25\u0003\u0002\u0002\u000231\u0003\u0002\u0002\u000234\u0003\u0002\u0002",
-    "\u00024\t\u0003\u0002\u0002\u000253\u0003\u0002\u0002\u000267\t\u0004",
-    "\u0002\u00027\u000b\u0003\u0002\u0002\u000289\u0005\u0006\u0004\u0002",
-    "9:\u0007\u000e\u0002\u0002:\r\u0003\u0002\u0002\u0002;<\u0007\u0017",
-    "\u0002\u0002<=\u0007\u0007\u0002\u0002=>\u0005\u0006\u0004\u0002>?\u0007",
-    "\u000e\u0002\u0002?\u000f\u0003\u0002\u0002\u0002\u0007\u0013\u0015",
-    "\u001c(3"].join("");
+    "\u0004\b\t\b\u0004\t\t\t\u0004\n\t\n\u0003\u0002\u0003\u0002\u0003\u0002",
+    "\u0003\u0002\u0007\u0002\u0019\n\u0002\f\u0002\u000e\u0002\u001c\u000b",
+    "\u0002\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0005\u0003\"",
+    "\n\u0003\u0003\u0003\u0003\u0003\u0003\u0004\u0003\u0004\u0003\u0004",
+    "\u0003\u0004\u0003\u0004\u0003\u0004\u0007\u0004,\n\u0004\f\u0004\u000e",
+    "\u0004/\u000b\u0004\u0003\u0005\u0003\u0005\u0003\u0005\u0003\u0005",
+    "\u0003\u0005\u0003\u0005\u0007\u00057\n\u0005\f\u0005\u000e\u0005:\u000b",
+    "\u0005\u0003\u0006\u0003\u0006\u0003\u0007\u0005\u0007?\n\u0007\u0003",
+    "\u0007\u0003\u0007\u0003\b\u0003\b\u0003\t\u0003\t\u0003\t\u0003\t\u0003",
+    "\t\u0003\n\u0003\n\u0003\n\u0003\n\u0003\n\u0003\n\u0003\n\u0005\nQ",
+    "\n\n\u0003\n\u0002\u0004\u0006\b\u000b\u0002\u0004\u0006\b\n\f\u000e",
+    "\u0010\u0012\u0002\u0005\u0003\u0002\n\u000b\u0003\u0002\f\r\u0004\u0002",
+    "\u0006\u0006\u0018\u0018\u0002R\u0002\u001a\u0003\u0002\u0002\u0002",
+    "\u0004\u001d\u0003\u0002\u0002\u0002\u0006%\u0003\u0002\u0002\u0002",
+    "\b0\u0003\u0002\u0002\u0002\n;\u0003\u0002\u0002\u0002\f>\u0003\u0002",
+    "\u0002\u0002\u000eB\u0003\u0002\u0002\u0002\u0010D\u0003\u0002\u0002",
+    "\u0002\u0012I\u0003\u0002\u0002\u0002\u0014\u0019\u0005\u0004\u0003",
+    "\u0002\u0015\u0019\u0005\f\u0007\u0002\u0016\u0019\u0005\u0010\t\u0002",
+    "\u0017\u0019\u0005\u0012\n\u0002\u0018\u0014\u0003\u0002\u0002\u0002",
+    "\u0018\u0015\u0003\u0002\u0002\u0002\u0018\u0016\u0003\u0002\u0002\u0002",
+    "\u0018\u0017\u0003\u0002\u0002\u0002\u0019\u001c\u0003\u0002\u0002\u0002",
+    "\u001a\u0018\u0003\u0002\u0002\u0002\u001a\u001b\u0003\u0002\u0002\u0002",
+    "\u001b\u0003\u0003\u0002\u0002\u0002\u001c\u001a\u0003\u0002\u0002\u0002",
+    "\u001d\u001e\u0007\u0005\u0002\u0002\u001e!\u0007\u0018\u0002\u0002",
+    "\u001f \u0007\b\u0002\u0002 \"\u0005\u0006\u0004\u0002!\u001f\u0003",
+    "\u0002\u0002\u0002!\"\u0003\u0002\u0002\u0002\"#\u0003\u0002\u0002\u0002",
+    "#$\u0007\u000f\u0002\u0002$\u0005\u0003\u0002\u0002\u0002%&\b\u0004",
+    "\u0001\u0002&\'\u0005\b\u0005\u0002\'-\u0003\u0002\u0002\u0002()\f\u0003",
+    "\u0002\u0002)*\t\u0002\u0002\u0002*,\u0005\b\u0005\u0002+(\u0003\u0002",
+    "\u0002\u0002,/\u0003\u0002\u0002\u0002-+\u0003\u0002\u0002\u0002-.\u0003",
+    "\u0002\u0002\u0002.\u0007\u0003\u0002\u0002\u0002/-\u0003\u0002\u0002",
+    "\u000201\b\u0005\u0001\u000212\u0005\n\u0006\u000228\u0003\u0002\u0002",
+    "\u000234\f\u0003\u0002\u000245\t\u0003\u0002\u000257\u0005\n\u0006\u0002",
+    "63\u0003\u0002\u0002\u00027:\u0003\u0002\u0002\u000286\u0003\u0002\u0002",
+    "\u000289\u0003\u0002\u0002\u00029\t\u0003\u0002\u0002\u0002:8\u0003",
+    "\u0002\u0002\u0002;<\t\u0004\u0002\u0002<\u000b\u0003\u0002\u0002\u0002",
+    "=?\u0005\u000e\b\u0002>=\u0003\u0002\u0002\u0002>?\u0003\u0002\u0002",
+    "\u0002?@\u0003\u0002\u0002\u0002@A\u0007\u000f\u0002\u0002A\r\u0003",
+    "\u0002\u0002\u0002BC\u0005\u0006\u0004\u0002C\u000f\u0003\u0002\u0002",
+    "\u0002DE\u0007\u0018\u0002\u0002EF\u0007\b\u0002\u0002FG\u0005\u0006",
+    "\u0004\u0002GH\u0007\u000f\u0002\u0002H\u0011\u0003\u0002\u0002\u0002",
+    "IJ\u0007\u0003\u0002\u0002JK\u0007\u0016\u0002\u0002KL\u0005\u000e\b",
+    "\u0002LM\u0007\u0017\u0002\u0002MP\u0005\u000e\b\u0002NO\u0007\u0004",
+    "\u0002\u0002OQ\u0005\u000e\b\u0002PN\u0003\u0002\u0002\u0002PQ\u0003",
+    "\u0002\u0002\u0002Q\u0013\u0003\u0002\u0002\u0002\t\u0018\u001a!-8>",
+    "P"].join("");
 
 
 const atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
@@ -56,17 +65,19 @@ const sharedContextCache = new antlr4.PredictionContextCache();
 export default class LgmScriptParser extends antlr4.Parser {
 
     static grammarFileName = "LgmScript.g4";
-    static literalNames = [ null, null, "'int'", null, null, "'='", null, 
-                            "'+'", "'-'", "'*'", "'/'", "'#'", "';'", "'.'", 
-                            "','", "'['", "']'", "'{'", "'}'", "'('", "')'" ];
-    static symbolicNames = [ null, "If", "Int", "IntLiteral", "StringLiteral", 
+    static literalNames = [ null, null, "'else'", "'int'", null, null, "'='", 
+                            null, "'+'", "'-'", "'*'", "'/'", "'#'", "';'", 
+                            "'.'", "','", "'['", "']'", "'{'", "'}'", "'('", 
+                            "')'" ];
+    static symbolicNames = [ null, "If", "Else", "Int", "IntLiteral", "StringLiteral", 
                              "AssignmentOP", "RelationalOP", "ADD", "SUB", 
                              "MUL", "DIV", "Sharp", "SemiColon", "Dot", 
                              "Comm", "LeftBracket", "RightBracket", "LeftBrace", 
                              "RightBrace", "LeftParen", "RightParen", "Id", 
                              "Whitespace", "Newline" ];
     static ruleNames = [ "program", "intDeclare", "additive", "multiplicative", 
-                         "primary", "expressionStatement", "assignmentStatement" ];
+                         "primary", "expressionStatement", "expression", 
+                         "assignmentStatement", "ifStatement" ];
 
     constructor(input) {
         super(input);
@@ -123,31 +134,36 @@ export default class LgmScriptParser extends antlr4.Parser {
 	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 19;
+	        this.state = 24;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
-	        while((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << LgmScriptParser.Int) | (1 << LgmScriptParser.IntLiteral) | (1 << LgmScriptParser.Id))) !== 0)) {
-	            this.state = 17;
+	        while((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << LgmScriptParser.If) | (1 << LgmScriptParser.Int) | (1 << LgmScriptParser.IntLiteral) | (1 << LgmScriptParser.SemiColon) | (1 << LgmScriptParser.Id))) !== 0)) {
+	            this.state = 22;
 	            this._errHandler.sync(this);
 	            var la_ = this._interp.adaptivePredict(this._input,0,this._ctx);
 	            switch(la_) {
 	            case 1:
-	                this.state = 14;
+	                this.state = 18;
 	                this.intDeclare();
 	                break;
 
 	            case 2:
-	                this.state = 15;
+	                this.state = 19;
 	                this.expressionStatement();
 	                break;
 
 	            case 3:
-	                this.state = 16;
+	                this.state = 20;
 	                this.assignmentStatement();
 	                break;
 
+	            case 4:
+	                this.state = 21;
+	                this.ifStatement();
+	                break;
+
 	            }
-	            this.state = 21;
+	            this.state = 26;
 	            this._errHandler.sync(this);
 	            _la = this._input.LA(1);
 	        }
@@ -173,21 +189,21 @@ export default class LgmScriptParser extends antlr4.Parser {
 	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 22;
+	        this.state = 27;
 	        this.match(LgmScriptParser.Int);
-	        this.state = 23;
+	        this.state = 28;
 	        this.match(LgmScriptParser.Id);
-	        this.state = 26;
+	        this.state = 31;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
 	        if(_la===LgmScriptParser.AssignmentOP) {
-	            this.state = 24;
+	            this.state = 29;
 	            this.match(LgmScriptParser.AssignmentOP);
-	            this.state = 25;
+	            this.state = 30;
 	            this.additive(0);
 	        }
 
-	        this.state = 28;
+	        this.state = 33;
 	        this.match(LgmScriptParser.SemiColon);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -217,10 +233,10 @@ export default class LgmScriptParser extends antlr4.Parser {
 	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 31;
+	        this.state = 36;
 	        this.multiplicative(0);
 	        this._ctx.stop = this._input.LT(-1);
-	        this.state = 38;
+	        this.state = 43;
 	        this._errHandler.sync(this);
 	        var _alt = this._interp.adaptivePredict(this._input,3,this._ctx)
 	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
@@ -231,11 +247,11 @@ export default class LgmScriptParser extends antlr4.Parser {
 	                _prevctx = localctx;
 	                localctx = new AdditiveContext(this, _parentctx, _parentState);
 	                this.pushNewRecursionContext(localctx, _startState, LgmScriptParser.RULE_additive);
-	                this.state = 33;
+	                this.state = 38;
 	                if (!( this.precpred(this._ctx, 1))) {
 	                    throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 1)");
 	                }
-	                this.state = 34;
+	                this.state = 39;
 	                localctx.bop = this._input.LT(1);
 	                _la = this._input.LA(1);
 	                if(!(_la===LgmScriptParser.ADD || _la===LgmScriptParser.SUB)) {
@@ -245,10 +261,10 @@ export default class LgmScriptParser extends antlr4.Parser {
 	                	this._errHandler.reportMatch(this);
 	                    this.consume();
 	                }
-	                this.state = 35;
+	                this.state = 40;
 	                this.multiplicative(0); 
 	            }
-	            this.state = 40;
+	            this.state = 45;
 	            this._errHandler.sync(this);
 	            _alt = this._interp.adaptivePredict(this._input,3,this._ctx);
 	        }
@@ -281,10 +297,10 @@ export default class LgmScriptParser extends antlr4.Parser {
 	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 42;
+	        this.state = 47;
 	        this.primary();
 	        this._ctx.stop = this._input.LT(-1);
-	        this.state = 49;
+	        this.state = 54;
 	        this._errHandler.sync(this);
 	        var _alt = this._interp.adaptivePredict(this._input,4,this._ctx)
 	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
@@ -295,11 +311,11 @@ export default class LgmScriptParser extends antlr4.Parser {
 	                _prevctx = localctx;
 	                localctx = new MultiplicativeContext(this, _parentctx, _parentState);
 	                this.pushNewRecursionContext(localctx, _startState, LgmScriptParser.RULE_multiplicative);
-	                this.state = 44;
+	                this.state = 49;
 	                if (!( this.precpred(this._ctx, 1))) {
 	                    throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 1)");
 	                }
-	                this.state = 45;
+	                this.state = 50;
 	                localctx.bop = this._input.LT(1);
 	                _la = this._input.LA(1);
 	                if(!(_la===LgmScriptParser.MUL || _la===LgmScriptParser.DIV)) {
@@ -309,10 +325,10 @@ export default class LgmScriptParser extends antlr4.Parser {
 	                	this._errHandler.reportMatch(this);
 	                    this.consume();
 	                }
-	                this.state = 46;
+	                this.state = 51;
 	                this.primary(); 
 	            }
-	            this.state = 51;
+	            this.state = 56;
 	            this._errHandler.sync(this);
 	            _alt = this._interp.adaptivePredict(this._input,4,this._ctx);
 	        }
@@ -339,7 +355,7 @@ export default class LgmScriptParser extends antlr4.Parser {
 	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 52;
+	        this.state = 57;
 	        _la = this._input.LA(1);
 	        if(!(_la===LgmScriptParser.IntLiteral || _la===LgmScriptParser.Id)) {
 	        this._errHandler.recoverInline(this);
@@ -367,12 +383,42 @@ export default class LgmScriptParser extends antlr4.Parser {
 	expressionStatement() {
 	    let localctx = new ExpressionStatementContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 10, LgmScriptParser.RULE_expressionStatement);
+	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 54;
-	        this.additive(0);
-	        this.state = 55;
+	        this.state = 60;
+	        this._errHandler.sync(this);
+	        _la = this._input.LA(1);
+	        if(_la===LgmScriptParser.IntLiteral || _la===LgmScriptParser.Id) {
+	            this.state = 59;
+	            this.expression();
+	        }
+
+	        this.state = 62;
 	        this.match(LgmScriptParser.SemiColon);
+	    } catch (re) {
+	    	if(re instanceof antlr4.error.RecognitionException) {
+		        localctx.exception = re;
+		        this._errHandler.reportError(this, re);
+		        this._errHandler.recover(this, re);
+		    } else {
+		    	throw re;
+		    }
+	    } finally {
+	        this.exitRule();
+	    }
+	    return localctx;
+	}
+
+
+
+	expression() {
+	    let localctx = new ExpressionContext(this, this._ctx, this.state);
+	    this.enterRule(localctx, 12, LgmScriptParser.RULE_expression);
+	    try {
+	        this.enterOuterAlt(localctx, 1);
+	        this.state = 64;
+	        this.additive(0);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -391,17 +437,59 @@ export default class LgmScriptParser extends antlr4.Parser {
 
 	assignmentStatement() {
 	    let localctx = new AssignmentStatementContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 12, LgmScriptParser.RULE_assignmentStatement);
+	    this.enterRule(localctx, 14, LgmScriptParser.RULE_assignmentStatement);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 57;
+	        this.state = 66;
 	        this.match(LgmScriptParser.Id);
-	        this.state = 58;
+	        this.state = 67;
 	        this.match(LgmScriptParser.AssignmentOP);
-	        this.state = 59;
+	        this.state = 68;
 	        this.additive(0);
-	        this.state = 60;
+	        this.state = 69;
 	        this.match(LgmScriptParser.SemiColon);
+	    } catch (re) {
+	    	if(re instanceof antlr4.error.RecognitionException) {
+		        localctx.exception = re;
+		        this._errHandler.reportError(this, re);
+		        this._errHandler.recover(this, re);
+		    } else {
+		    	throw re;
+		    }
+	    } finally {
+	        this.exitRule();
+	    }
+	    return localctx;
+	}
+
+
+
+	ifStatement() {
+	    let localctx = new IfStatementContext(this, this._ctx, this.state);
+	    this.enterRule(localctx, 16, LgmScriptParser.RULE_ifStatement);
+	    var _la = 0; // Token type
+	    try {
+	        this.enterOuterAlt(localctx, 1);
+	        this.state = 71;
+	        this.match(LgmScriptParser.If);
+	        this.state = 72;
+	        this.match(LgmScriptParser.LeftParen);
+	        this.state = 73;
+	        this.expression();
+	        this.state = 74;
+	        this.match(LgmScriptParser.RightParen);
+	        this.state = 75;
+	        this.expression();
+	        this.state = 78;
+	        this._errHandler.sync(this);
+	        _la = this._input.LA(1);
+	        if(_la===LgmScriptParser.Else) {
+	            this.state = 76;
+	            this.match(LgmScriptParser.Else);
+	            this.state = 77;
+	            this.expression();
+	        }
+
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -421,28 +509,29 @@ export default class LgmScriptParser extends antlr4.Parser {
 
 LgmScriptParser.EOF = antlr4.Token.EOF;
 LgmScriptParser.If = 1;
-LgmScriptParser.Int = 2;
-LgmScriptParser.IntLiteral = 3;
-LgmScriptParser.StringLiteral = 4;
-LgmScriptParser.AssignmentOP = 5;
-LgmScriptParser.RelationalOP = 6;
-LgmScriptParser.ADD = 7;
-LgmScriptParser.SUB = 8;
-LgmScriptParser.MUL = 9;
-LgmScriptParser.DIV = 10;
-LgmScriptParser.Sharp = 11;
-LgmScriptParser.SemiColon = 12;
-LgmScriptParser.Dot = 13;
-LgmScriptParser.Comm = 14;
-LgmScriptParser.LeftBracket = 15;
-LgmScriptParser.RightBracket = 16;
-LgmScriptParser.LeftBrace = 17;
-LgmScriptParser.RightBrace = 18;
-LgmScriptParser.LeftParen = 19;
-LgmScriptParser.RightParen = 20;
-LgmScriptParser.Id = 21;
-LgmScriptParser.Whitespace = 22;
-LgmScriptParser.Newline = 23;
+LgmScriptParser.Else = 2;
+LgmScriptParser.Int = 3;
+LgmScriptParser.IntLiteral = 4;
+LgmScriptParser.StringLiteral = 5;
+LgmScriptParser.AssignmentOP = 6;
+LgmScriptParser.RelationalOP = 7;
+LgmScriptParser.ADD = 8;
+LgmScriptParser.SUB = 9;
+LgmScriptParser.MUL = 10;
+LgmScriptParser.DIV = 11;
+LgmScriptParser.Sharp = 12;
+LgmScriptParser.SemiColon = 13;
+LgmScriptParser.Dot = 14;
+LgmScriptParser.Comm = 15;
+LgmScriptParser.LeftBracket = 16;
+LgmScriptParser.RightBracket = 17;
+LgmScriptParser.LeftBrace = 18;
+LgmScriptParser.RightBrace = 19;
+LgmScriptParser.LeftParen = 20;
+LgmScriptParser.RightParen = 21;
+LgmScriptParser.Id = 22;
+LgmScriptParser.Whitespace = 23;
+LgmScriptParser.Newline = 24;
 
 LgmScriptParser.RULE_program = 0;
 LgmScriptParser.RULE_intDeclare = 1;
@@ -450,7 +539,9 @@ LgmScriptParser.RULE_additive = 2;
 LgmScriptParser.RULE_multiplicative = 3;
 LgmScriptParser.RULE_primary = 4;
 LgmScriptParser.RULE_expressionStatement = 5;
-LgmScriptParser.RULE_assignmentStatement = 6;
+LgmScriptParser.RULE_expression = 6;
+LgmScriptParser.RULE_assignmentStatement = 7;
+LgmScriptParser.RULE_ifStatement = 8;
 
 class ProgramContext extends antlr4.ParserRuleContext {
 
@@ -496,6 +587,17 @@ class ProgramContext extends antlr4.ParserRuleContext {
 	        return this.getTypedRuleContexts(AssignmentStatementContext);
 	    } else {
 	        return this.getTypedRuleContext(AssignmentStatementContext,i);
+	    }
+	};
+
+	ifStatement = function(i) {
+	    if(i===undefined) {
+	        i = null;
+	    }
+	    if(i===null) {
+	        return this.getTypedRuleContexts(IfStatementContext);
+	    } else {
+	        return this.getTypedRuleContext(IfStatementContext,i);
 	    }
 	};
 
@@ -756,12 +858,12 @@ class ExpressionStatementContext extends antlr4.ParserRuleContext {
         this.ruleIndex = LgmScriptParser.RULE_expressionStatement;
     }
 
-	additive() {
-	    return this.getTypedRuleContext(AdditiveContext,0);
-	};
-
 	SemiColon() {
 	    return this.getToken(LgmScriptParser.SemiColon, 0);
+	};
+
+	expression() {
+	    return this.getTypedRuleContext(ExpressionContext,0);
 	};
 
 	enterRule(listener) {
@@ -779,6 +881,49 @@ class ExpressionStatementContext extends antlr4.ParserRuleContext {
 	accept(visitor) {
 	    if ( visitor instanceof LgmScriptVisitor ) {
 	        return visitor.visitExpressionStatement(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
+
+}
+
+
+
+class ExpressionContext extends antlr4.ParserRuleContext {
+
+    constructor(parser, parent, invokingState) {
+        if(parent===undefined) {
+            parent = null;
+        }
+        if(invokingState===undefined || invokingState===null) {
+            invokingState = -1;
+        }
+        super(parent, invokingState);
+        this.parser = parser;
+        this.ruleIndex = LgmScriptParser.RULE_expression;
+    }
+
+	additive() {
+	    return this.getTypedRuleContext(AdditiveContext,0);
+	};
+
+	enterRule(listener) {
+	    if(listener instanceof LgmScriptListener ) {
+	        listener.enterExpression(this);
+		}
+	}
+
+	exitRule(listener) {
+	    if(listener instanceof LgmScriptListener ) {
+	        listener.exitExpression(this);
+		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof LgmScriptVisitor ) {
+	        return visitor.visitExpression(this);
 	    } else {
 	        return visitor.visitChildren(this);
 	    }
@@ -844,6 +989,72 @@ class AssignmentStatementContext extends antlr4.ParserRuleContext {
 
 
 
+class IfStatementContext extends antlr4.ParserRuleContext {
+
+    constructor(parser, parent, invokingState) {
+        if(parent===undefined) {
+            parent = null;
+        }
+        if(invokingState===undefined || invokingState===null) {
+            invokingState = -1;
+        }
+        super(parent, invokingState);
+        this.parser = parser;
+        this.ruleIndex = LgmScriptParser.RULE_ifStatement;
+    }
+
+	If() {
+	    return this.getToken(LgmScriptParser.If, 0);
+	};
+
+	LeftParen() {
+	    return this.getToken(LgmScriptParser.LeftParen, 0);
+	};
+
+	expression = function(i) {
+	    if(i===undefined) {
+	        i = null;
+	    }
+	    if(i===null) {
+	        return this.getTypedRuleContexts(ExpressionContext);
+	    } else {
+	        return this.getTypedRuleContext(ExpressionContext,i);
+	    }
+	};
+
+	RightParen() {
+	    return this.getToken(LgmScriptParser.RightParen, 0);
+	};
+
+	Else() {
+	    return this.getToken(LgmScriptParser.Else, 0);
+	};
+
+	enterRule(listener) {
+	    if(listener instanceof LgmScriptListener ) {
+	        listener.enterIfStatement(this);
+		}
+	}
+
+	exitRule(listener) {
+	    if(listener instanceof LgmScriptListener ) {
+	        listener.exitIfStatement(this);
+		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof LgmScriptVisitor ) {
+	        return visitor.visitIfStatement(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
+
+}
+
+
+
 
 LgmScriptParser.ProgramContext = ProgramContext; 
 LgmScriptParser.IntDeclareContext = IntDeclareContext; 
@@ -851,4 +1062,6 @@ LgmScriptParser.AdditiveContext = AdditiveContext;
 LgmScriptParser.MultiplicativeContext = MultiplicativeContext; 
 LgmScriptParser.PrimaryContext = PrimaryContext; 
 LgmScriptParser.ExpressionStatementContext = ExpressionStatementContext; 
+LgmScriptParser.ExpressionContext = ExpressionContext; 
 LgmScriptParser.AssignmentStatementContext = AssignmentStatementContext; 
+LgmScriptParser.IfStatementContext = IfStatementContext; 

@@ -59,12 +59,30 @@ export default class LgmScriptListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
+	// Enter a parse tree produced by LgmScriptParser#expression.
+	enterExpression(ctx) {
+	}
+
+	// Exit a parse tree produced by LgmScriptParser#expression.
+	exitExpression(ctx) {
+	}
+
+
 	// Enter a parse tree produced by LgmScriptParser#assignmentStatement.
 	enterAssignmentStatement(ctx) {
 	}
 
 	// Exit a parse tree produced by LgmScriptParser#assignmentStatement.
 	exitAssignmentStatement(ctx) {
+	}
+
+
+	// Enter a parse tree produced by LgmScriptParser#ifStatement.
+	enterIfStatement(ctx) {
+	}
+
+	// Exit a parse tree produced by LgmScriptParser#ifStatement.
+	exitIfStatement(ctx) {
 	}
 
 

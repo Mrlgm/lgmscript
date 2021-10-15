@@ -19,6 +19,27 @@ export default class JSVisitor extends LgmScriptVisitor {
     return 0;
   }
 
+  visitExpression(ctx) {
+    const value = this.visit(ctx.additive());
+    return value;
+  }
+
+  visitIfStatement(ctx) {
+    console.log("进入if语句");
+    const condition = this.visit(ctx.expression(0));
+    let value;
+    if (condition) {
+      value = this.visit(ctx.expression(1));
+      console.log(value);
+    } else {
+      if (ctx.Else()) {
+        value = this.visit(ctx.expression(2));
+        console.log(value);
+      }
+    }
+    return value;
+  }
+
   visitAdditive(ctx) {
     // console.log("触发加法");
     let value;

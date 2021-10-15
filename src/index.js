@@ -4,7 +4,7 @@ import LgmScriptParser from "../output/production/lgmscript/LgmScriptParser.js";
 import JSVisitor from "./main/JSVisitor.js";
 import JSListener from "./main/JSListener.js";
 
-const input = `int a = 3 + 4; a + 1; a + 12;`;
+const input = `if(1) 1+3 else 4+3;`;
 const chars = new antlr4.InputStream(input);
 const lexer = new LgmScriptLexer(chars);
 const tokens = new antlr4.CommonTokenStream(lexer);
